@@ -1,0 +1,217 @@
+body{
+    background-color: rgb(231, 186, 194);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.label {
+    height: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+button {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.div1 {
+    height: 25%;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.div2 {
+    height: 15%;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add-task {
+    height: 10%;
+    width: 80%;
+}
+
+.card{
+    border: 1px solid black;
+    height: 80%;
+    width: 70%;
+    border-radius: 20px;
+    background-color: rgb(233, 232, 230);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center; */
+
+} 
+
+
+.child1 {
+    border: 1px solid black;
+    height: 60%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.one{
+   
+     display:flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 10%;
+
+
+}
+.two{
+   
+    display:flexbox;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   padding-bottom: 10%;
+
+
+} 
+.three{
+   
+    display:flexbox;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-content: center;
+   padding-bottom: 10%;
+
+
+}  
+.subone{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+    
+}
+.subtwo{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+    
+
+
+}
+.subfour{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+
+}
+.subfive{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+
+}
+
+.sub7{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+
+
+}
+.sub8{
+    width: -1px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    color: rgb(110, 110, 223);
+    flex-shrink: 10;
+    /* align-self: center;
+    align-items: center; */
+    align-content: center;
+    
+
+
+}
+p{
+    text-align: center;
+    flex-grow: 2;
+}
+
+#plusbtn{
+    border-radius: 100px;
+    width: 3%;
+    /* background-color: blue; */
+
+}
+h1{
+    font-size:large;
+    color: rgb(119, 119, 231);
+}
+.sub{
+
+
+}

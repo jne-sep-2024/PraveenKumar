@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"></link>
+</head>
+<body>
+    <div class="card">
+           
+            <div class="one">
+                <h1>
+                    Reported (2)
+                </h1>
+                <div class="subone">
+             <p>
+                In-line editing | Non responsive
+             </p>
+            </div>
+             <div class="subtwo">
+              <p>
+                Mobile App || Sign In Error
+              </p>  
+              </div>
+
+              <div class="subthree">
+                <button id="button" value="">Add Task</button>
+              </div>
+            </div>
+        
+              <!-- Second one  -->
+            
+             <div class="two">
+               <h1>
+                In progress (2)
+               </h1>
+               <div class="subfour">
+                <p>Projects || Saving Templates</p>
+               </div>
+               <div class="subfive">
+               <p>
+                Data Export || Download to Long
+               </p>
+             </div>
+             <div class="subsix">
+               <button id="plusbtn" value="Add Task">&#43;</button>
+             </div>
+             </div>
+             <div class="three">
+                <h1>
+                 Solved (2)
+                </h1>
+                <div class="sub7">
+                    <p>Website || Broken Ink</p>
+                </div>
+                <div class="sub8">
+                    <p>
+                        Blog | Incorrect Contact Info
+                       </p>
+                </div>
+               <div class="sub9">
+               <button id="plusbtn" value="Add Task">&#43;</button>
+              </div>
+            </div>
+            </div>
+</body>
+</html>
