@@ -26,7 +26,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(167,164,97,1) 91%,
     width: 75em;
     display: flex;
     flex-direction: column;
-    /* justify-content:center; */
+    justify-content:center;
     align-content: center;
 
 
@@ -34,7 +34,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(167,164,97,1) 91%,
 
 .logo{
    
-    height: 10em;
+    height: 12em;
     width: 10em;
     padding-top: 20px ;
     padding-left: 20px;
@@ -58,7 +58,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(167,164,97,1) 91%,
 
 .navbar{
     /* border: 1px solid black; */
-    height: 5em;
+    height: 2em;
     width: 69em;
     display: flex;
     flex-direction: row-reverse;
@@ -78,6 +78,7 @@ font-weight: bold;
     justify-content:right;
     align-content: center;
     background-color: rgb(236, 234, 231);
+    /* padding-left: 20px; */
     /* background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(48,190,213,1) 100%); */
 }
@@ -95,6 +96,7 @@ font-weight: bold;
     justify-content:center;
     align-content: center;
     flex-wrap: wrap;
+    padding-top: 20px;
 }
 .input{
     border-radius: 5px;
@@ -107,12 +109,13 @@ font-weight: bold;
 
 .total{
     
-    height: 25em;
+    height: 26em;
     width: 54em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    padding-left: 20px;
 }
 img{
    border-radius: 50%;
@@ -163,4 +166,17 @@ text-align: center;
 
 .head1{
 margin-left: 20px;
+} */
+
+.output{
+    width: 20em;
+    height: 10em;
+    /* border: 1px solid black; */
+}
+
+
+/* @media (max-width: 500px){
+    body{
+        color: aqua;
+    }
 } */
