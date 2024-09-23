@@ -1,0 +1,74 @@
+body {
+
+    background-image: linear-gradient(to bottom right, blue, purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+
+    background-color: whitesmoke;
+    height: 70%;
+    width: 30%;
+    border-radius: 10px;
+}
+.label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid; */
+    height: 15%;
+    font-size: larger;
+    font-weight: bold;
+   
+}
+
+.main{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+input {
+    border: 0;
+    border-bottom: 2px solid;
+    background: transparent;
+    height: 25px;
+    font-size:large;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form-fields {
+    display: flex;
+    align-items: right;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 11em;
+}
+
+.footer{ 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 6em;
+
+}
+
+button {
+    height: 4em;
+    width: 20em;
+    border-radius: 40px;
+    font-weight: bold;
+    background: rgb(223, 220, 216);
+}
+
+a {
+    text-decoration: none;
+}
+

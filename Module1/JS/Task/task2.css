@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+}
+#main{
+   height: 100px;
+   width: 100px;
+   display: inline-block;
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+h1{
+font-size: small;
+}
+#id1{
+    
+    background-color: blue;
+    border: 5px solid black;
+}
+
+#id2{
+    background-color: green;
+    border: 5px solid black;
+}
+
+#id3{
+    background-color: red;
+    border: 5px solid black;
+}
+div{
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    
+}
+
+
