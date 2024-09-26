@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Bookdetails {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
