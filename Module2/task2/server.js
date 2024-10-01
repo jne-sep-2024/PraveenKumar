@@ -2,8 +2,9 @@ import express from 'express';
 import { config } from './config/config.js';
 import routes from './routes/main.js';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
-const { appConfig } = config();
+const { appConfig, dbConfig } = config();
 
 const app = express();
 
@@ -11,6 +12,12 @@ app.use(bodyParser.json());
 
 app.use('/', routes)
 
-app.listen(appConfig.port, () => {
-    console.log(`Server is listening to the port ${appConfig.port}`);
-})
+mongoose.connect(dbConfig.url)
+    .then(() => {
+        console.log("Database connected successfully!.");
+
+        app.listen(appConfig.port, () => {
+            console.log(`Server is listening to the port ${appConfig.port}`);
+        })
+    })
+    .catch((err) => console.log("connected Failed", err));
