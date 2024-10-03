@@ -1,73 +1,70 @@
+import { getDefaultResultOrder } from 'dns';
+import { userModel } from '../model/user.js';
 import user from '../user.json' assert { type: "json" };
 import fs from 'fs';
 
-export const getdata = ((req, res) => {
+
+export const getdata = (async (req, res) => {
     try {
-        res.status(200).json({ information: 'Data Recieved Sucessfully', user: user.users, statusCode: 200 })
+        const getusers = await userModel.find({});
+        res.status(200).json({ message: 'Data Recieved Sucessfully', user: getusers, statusCode: 200 })
     } catch (err) {
-        res.status(400).json({ information: err.information, user: null, statusCode: 400 })
+        res.status(400).json({ message: err.message, user: null, statusCode: 400 })
     }
 });
 
-export const getuser = ((req, res) => {
+export const getuser = (async (req, res) => {
     try {
-        const { id } = req.params;
-        const finduser = user.users.find((data) => data.id == id);
-        res.status(200).json({ information: 'Data Recieved Sucessfully', user: finduser, statusCode: 200 })
+        let id = req.params.id;
+        const getusers = await userModel.findById(id);
+        res.status(200).json({ message: 'Data Recieved Sucessfully', user: getusers, statusCode: 200 })
     } catch (err) {
-        res.status(400).json({ information: err.information, user: null, statusCode: 400 })
+        res.status(400).json({ message: err.message, user: null, statusCode: 400 })
     }
 });
 
-export const postdata = ((req, res) => {
+export const postdata = (async (req, res) => {
     try {
         const databody = req.body;
-        const newUserdata = {
-            id: Math.random(),
-            ...databody
+        const existingdata = await userModel.findOne({ email: databody.email }).exec();
+        console.log("existingdata: ", existingdata);
+        if (existingdata) {
+            throw new Error("User already exists with provided email/phone, please try with new one.")
         }
-        data.user.push(newUserdata)
-        fs.writeFile('user.json', JSON.stringify(user), (err) => {
-            if (err) throw new Error("Failed to Insert");
+        const result = await userModel.create({
+            name: databody.name,
+            email: databody.email,
+            phone: databody.phone,
+            address: databody.address
         });
-        res.status(200).json({ information: 'Data Recieved Sucessfully', user: newUserdata, statusCode: 200 })
+        console.log('Result is', result);
+        res.status(200).json({ message: 'Data Added Sucessfully', user: userModel, statusCode: 200 })
     } catch (err) {
-        res.status(400).json({ information: err.information, user: null, statusCode: 400 })
+        console.log(err);
+        res.status(400).json({ message: err.message, user: null, statusCode: 400 })
     }
 });
 
 
-export const updatedUser = ((req, res) => {
+export const updatedUser = (async(req, res) => {
     try {
-        const { id } = req.params;
-        const mainbody = req.body;
-        const updatedUserdata = {
-            id: parseInt(id),
-            ...mainbody
-        }
-        const adduser = user.users.filter((data) => data.id != id);
-        updatedUserdata.push(adduser);
-        user.users = adduser;
-        fs.writeFile('user.json', JSON.stringify(user), (err) => {
-            if (err) throw new Error("Failed to Modify Data");
-        });
-        res.status(200).json({ information: 'Data Recieved Sucessfully', user: adduser, statusCode: 200 })
-    } catch (err) {
-        res.status(400).json({ information: err.information, user: null, statusCode: 400 })
-    }
+        const databody = req.body;
+        let id = req.params.id;
+        const updatedata=await userModel.findByIdAndUpdate(id,{name: databody.name,email: databody.email,phone :databody.phone, address: databody.address})
+        if(!updatedata && updatedata =='') throw new Error("Please Enter the Valid ID",id);
+        res.status(200).json({ message: 'User Added Sucessfully', user: updatedata, statusCode: 200 })
+} catch (err) {
+    res.status(400).json({ message: err.message, user: null, statusCode: 400 })
+}
 });
 
 
-export const deleteuser = ((req, res) => {
+export const deleteuser = (async (req, res) => {
     try {
-        const { id } = req.params;
-        const deluser = user.users.filter((data) => data.id != id);
-        user.users = deluser;
-        fs.writeFile('user.json', JSON.stringify(user), (err) => {
-            if (err) throw new Error("Failed to Modify Data");
-        });
-        res.status(200).json({ information: 'Data Recieved Sucessfully', user: deluser, statusCode: 200 })
+        let id = req.params.id;
+        const delusers = await userModel.findByIdAndDelete(id);
+        res.status(200).json({ message: 'User Deleted Sucessfully', user: delusers, statusCode: 200 })
     } catch (err) {
-        res.status(400).json({ information: err.information, user: null, statusCode: 400 })
+        res.status(400).json({ message: err.message, user: null, statusCode: 400 })
     }
 });
