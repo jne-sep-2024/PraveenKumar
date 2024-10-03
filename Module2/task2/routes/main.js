@@ -6,12 +6,12 @@ const router = express.Router();
 
 router.get('/users', getdata);
 
-router.get('/users/:id', checkIfIdExists, getuser);
+router.get('/users/:id', getuser);
 
-router.delete('/users/:id', checkIfIdExists, deleteuser)
+router.delete('/users/:id', deleteuser)
 
 router.post('/users', postdata)
 
-router.put('/users/:id', checkIfIdExists, updatedUser)
+router.put('/users/:id', updatedUser)
 
 export default router;

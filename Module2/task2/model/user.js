@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+export const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -13,12 +13,11 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: Number,
         required: true,
-        unique: true,
     },
     address: {
         type: String,
         required: true,
     }
-});
+}, { timestamps: true });
 
 export const userModel = mongoose.model('user', userSchema);
