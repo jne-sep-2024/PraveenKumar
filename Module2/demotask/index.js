@@ -1,5 +1,7 @@
 import express from 'express';
-import routes from './routes/user.js';
+import userRoutes from './routes/user.js';
+import postRoutes from './routes/post.js';
+import commentRoutes from './routes/comment.js';
 import { config } from './config/config.js';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -10,7 +12,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/', routes);
+app.use('/user', userRoutes);
+app.use('/post', postRoutes);
+app.use('/comment', commentRoutes);
 
 mongoose.connect(dbConfig.url)
     .then(() => {

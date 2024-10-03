@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const userSchema = new mongoose.Schema({
-    fristname: {
+    firstName: {
         type: String,
         required: [true, 'Firstname is required'],
         minlength: [3, 'Firstname must be at least 3 characters long'],
@@ -9,7 +9,7 @@ export const userSchema = new mongoose.Schema({
         match: [/^[A-Za-z]+$/, 'Firstname should only contain alphabets'],
         unique: true,
     },
-    lastname: {
+    lastName: {
         type: String,
         minlength: [1, 'lastname must be at least 1 characters long'],
         maxlength: [10, 'lastname must be at most 10 characters long'],
@@ -28,17 +28,17 @@ export const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        required: [true, 'Firstname is required'],
-        minlength: [3, 'Firstname must be at least 3 characters long'],
-        maxlength: [10, 'Firstname must be at most 10 characters long'],
-        match: [/^[A-Za-z]+$/, 'Firstname should only contain alphabets'],
+        required: [true, 'Gender is required'],
+        minlength: [3, 'Gender must be at least 3 characters long'],
+        maxlength: [10, 'Gender must be at most 10 characters long'],
+        match: [/^[A-Za-z]+$/, 'Gender should only contain alphabets'],
     },
-    Company: {
+    company: {
         type: String,
-        minlength: [10, 'Firstname must be at least 3 characters long'],
-        maxlength: [50, 'Firstname must be at most 10 characters long'],
+        minlength: [10, 'Company must be at least 3 characters long'],
+        maxlength: [50, 'Company must be at most 10 characters long'],
     },
-    role :{
+    role: {
         type: String,
         minlength: [1, 'Role must be at least 3 characters long'],
         maxlength: [20, 'Role must be at most 10 characters long'],

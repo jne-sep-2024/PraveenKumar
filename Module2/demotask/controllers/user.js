@@ -1,20 +1,20 @@
-import { userModel } from '../model/task.js';
+import { userModel } from '../model/user.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 
 export const registeruser = (async (req, res) => {
     try {
-        const { fristname, lastname, email, password, gender, company, role } = req.body;
-        const existingdata = await userModel.findOne({ email, fristname, password, gender }).exec();
+        const { firstName, lastName, email, password, gender, company, role } = req.body;
+        const existingdata = await userModel.findOne({ email, firstName, password, gender }).exec();
         console.log("existingdata: ", existingdata);
         if (existingdata) {
             throw new Error("User already exists with provided email/phone, please try with new one.")
         }
         const encpass = await bcrypt.hash(password, 10)
         const result = await userModel.create({
-            fristname,
-            lastname,
+            firstName,
+            lastName,
             email,
             password: encpass,
             gender,
@@ -39,7 +39,7 @@ export const loginuser = (async (req, res) => {
         if (!ismatch) {
             throw new Error("Password Not Match");
         }
-        res.json({ token: jwt.sign({ email: existingdata.email, fristname: existingdata.fristname, role: existingdata.role }, 'RESTFULAPIs') });
+        res.json({ token: jwt.sign({ id: existingdata.id, email: existingdata.email, fristname: existingdata.fristname, role: existingdata.role }, 'RESTFULAPIs') });
     } catch (err) {
         console.log(err);
         res.status(400).json({ message: err.message, user: null, statusCode: 400 })
@@ -58,7 +58,7 @@ export const getuser = (async (req, res) => {
 
 export const getuserbyid = (async (req, res) => {
     try {
-        const getusers = await userModel.find({});
+        const getusers = await userModel.find();
         res.status(200).json({ message: 'Data Recieved Sucessfully', user: getusers, statusCode: 200 })
     } catch (err) {
         res.status(400).json({ message: err.message, user: null, statusCode: 400 })
@@ -86,3 +86,5 @@ export const deleteuser = (async (req, res) => {
         res.status(400).json({ message: err.message, user: null, statusCode: 400 })
     }
 });
+
+
