@@ -12,6 +12,6 @@ router.get('/:id', verifyToken,getcommmentbyid)
 
 router.put('/:id', verifyToken, updatecommment)
 
-router.delete('/:id', verifyToken1, deletecommment)
+router.delete('/:id', verifyToken1,deletecommment)
 
 export default router;

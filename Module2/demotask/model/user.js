@@ -7,7 +7,6 @@ export const userSchema = new mongoose.Schema({
         minlength: [3, 'Firstname must be at least 3 characters long'],
         maxlength: [10, 'Firstname must be at most 10 characters long'],
         match: [/^[A-Za-z]+$/, 'Firstname should only contain alphabets'],
-        unique: true,
     },
     lastName: {
         type: String,
@@ -35,14 +34,18 @@ export const userSchema = new mongoose.Schema({
     },
     company: {
         type: String,
-        minlength: [10, 'Company must be at least 3 characters long'],
+        minlength: [10, 'Company must be at least 10 characters long'],
         maxlength: [50, 'Company must be at most 10 characters long'],
     },
     role: {
         type: String,
         minlength: [1, 'Role must be at least 3 characters long'],
         maxlength: [20, 'Role must be at most 10 characters long'],
-    }
+    },
+    bank: [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'bank',
+    }],
 }, { timestamps: true });
 
 export const userModel = mongoose.model('user', userSchema);

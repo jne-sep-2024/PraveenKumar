@@ -1,6 +1,7 @@
 import express from 'express';
 import userRoutes from './routes/user.js';
 import postRoutes from './routes/post.js';
+import bankRoutes from './routes/bank.js';
 import commentRoutes from './routes/comment.js';
 import { config } from './config/config.js';
 import bodyParser from 'body-parser';
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/user', userRoutes);
 app.use('/post', postRoutes);
 app.use('/comment', commentRoutes);
+app.use('/bank', bankRoutes);
 
 mongoose.connect(dbConfig.url)
     .then(() => {

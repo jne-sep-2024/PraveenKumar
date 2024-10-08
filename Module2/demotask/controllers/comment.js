@@ -18,7 +18,8 @@ export const addcommment = (async (req, res) => {
 export const getcommmentbyid = (async (req, res) => {
     try {
         let id = req.params.id;
-        const getusers = await commentsModel.findById(id).populate('author', '_id email firstname ').populate('post', '_id title');
+        const getusers = await commentsModel.findById({id}).populate('author', '_id email firstname ').populate('post', '_id title');
+        if (!getusers && getusers=='') throw new Error ("Enter Valid ID");   
         res.status(200).json({ message: 'Comment Recieved Sucessfully', user: getusers, statusCode: 200 })
     } catch (err) {
         res.status(400).json({ message: err.message, user: null, statusCode: 400 })
@@ -50,6 +51,7 @@ export const deletecommment = (async (req, res) => {
     try {
         let id = req.params.id;
         const delusers = await commentsModel.findByIdAndDelete(id);
+        if (!delusers && delusers=='') throw new Error ("Enter Valid ID");   
         res.status(200).json({ message: 'Comment Deleted Sucessfully', user: delusers, statusCode: 200 })
     } catch (err) {
         res.status(400).json({ message: err.message, user: null, statusCode: 400 })

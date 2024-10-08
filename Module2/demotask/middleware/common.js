@@ -2,24 +2,29 @@ import jwt from 'jsonwebtoken';
 
 export const verifyToken = (req, res, next) => {
     try {
-        if (req.headers.authorization.split(' ')[0] === 'Bearer') {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
             jwt.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', (err, decode) => {
                 if (err) {
                     return res.status(401).json({ message: 'Invalid token' });
                 }
                 req.user = decode;
+                // console.log(req.user);
                 console.log("Authorized user");
                 next();
             });
         }
-    } catch (err) {
+        else {
+            throw new Error(" unAuthorized user");
+        }
+    }
+    catch (err) {
         res.status(404).json({ message: err.message, data: null, statusCode: 404 });
     }
 }
 
 export const verifyToken1 = (req, res, next) => {
     try {
-        if (req.headers.authorization.split(' ')[0] === 'Bearer') {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
             jwt.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', (err, decode) => {
                 if (err) {
                     return res.status(401).json({ message: 'Invalid token' });
@@ -32,6 +37,8 @@ export const verifyToken1 = (req, res, next) => {
                     throw new Error(" unAuthorized user");
                 }
             });
+        } else {
+            throw new Error(" unAuthorized user");
         }
     } catch (err) {
         res.status(404).json({ message: err.message, data: null, statusCode: 404 });
