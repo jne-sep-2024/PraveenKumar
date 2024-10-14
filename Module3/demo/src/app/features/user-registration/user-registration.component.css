@@ -1,0 +1,77 @@
+.user-registration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to start */
+    padding: 20px;
+    position: relative; /* Make the container relative for absolute positioning */
+}
+
+.back-btn {
+    background-color: #007bff; /* Blue color */
+    color: white;                 
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    position: absolute; /* Position the button */
+    top: 20px; /* Space from the top */
+    right: 20px; /* Space from the right */
+}
+
+.back-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.user-registration h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Keep form layout as column for button */
+    align-items: center; /* Center the form */
+}
+
+.input-row {
+    display: flex; /* Use flex to display inputs side by side */
+    justify-content: space-between; /* Space them evenly */
+    width: 100%; /* Use full width */
+    margin-bottom: 15px; /* Increased spacing between rows */
+}
+
+.input-group { 
+     display: flex;
+    flex-direction: column;
+    flex: 1; /* Allow input groups to grow */
+    margin-right: 10px; /* Space between input groups */
+}
+
+.input-group:last-child {
+    margin-right: 0; /* Remove right margin for the last input group */
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 5px; /* Reduced spacing for a more compact look */
+    padding: 8px;
+    font-size: 16px;
+    width: 80%; /* Full width of input groups */
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 150px;
+    margin-top: 10px; /* Spacing above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

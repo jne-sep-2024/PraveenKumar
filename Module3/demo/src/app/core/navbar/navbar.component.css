@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 0 20px;
+    height: 60px;
+    color: white;
+}
+
+.logo {
+    height: 40px;
+}
+
+.username {
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<div class="user-management">
+    <h2>User Management</h2>
+
+    <!-- Add User Button -->
+    <button class="add-user-btn" routerLink="/user-registration">Add User</button> <!-- Add routerLink -->
+
+    <!-- User Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>Email</th>
+                <th>gender</th>
+                <th>company</th>
+                <th>Role</th>
+                <th>Actions</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user._id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.company}}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <div class="action-buttons">
+                        <button [routerLink]="['/edit-user', user._id]" class="action-btn edit-btn">Edit</button>
+                        <button (click)="openDeleteConfirmation(user)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-confirm-delete *ngIf="isDeleteConfirmationVisible" (onConfirm)="deleteUser(selectedUser._id)"
+        (onCancel)="closeDeleteConfirmation()"></app-confirm-delete>
+</div>

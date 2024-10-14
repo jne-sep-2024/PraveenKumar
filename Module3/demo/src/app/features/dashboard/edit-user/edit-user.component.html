@@ -1,0 +1,45 @@
+<div class="edit-user">
+    <button class="back-btn" routerLink="/user-management">Back</button>
+
+    <h2>Edit User</h2>
+
+    <form (submit)="onSubmit($event)">
+        <div class="input-row">
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" [(ngModel)]="user.firstName" name="firstName" required>
+            </div>
+
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" [(ngModel)]="user.lastName" name="lastName" required>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" [(ngModel)]="user.gender" name="gender" required>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label for="company">Company:</label>
+                <input type="text" id="company" [(ngModel)]="user.company" name="company" required>
+            </div>
+
+            <div class="input-group">
+                <label for="role">Role:</label>
+                <input type="text" id="role" [(ngModel)]="user.role" name="role" required>
+            </div>
+        </div>
+
+        <button type="submit" class="update-btn">Update</button>
+    </form>
+</div>
