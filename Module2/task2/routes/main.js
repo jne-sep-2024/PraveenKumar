@@ -1,6 +1,6 @@
 import express from 'express';
-import { deleteuser, getdata, getuser, postdata, updatedUser } from '../controllers/index.js';
-import { checkIfIdExists } from '../middleware/common.js';
+import { deleteuser, getdata, getuser, postdata, updatedUser } from '../../task2/controllers/index.js';
+import { checkIfIdExists } from '../../task2/middleware/common.js';
 
 const router = express.Router();
 

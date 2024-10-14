@@ -43,8 +43,18 @@ export const userSchema = new mongoose.Schema({
         maxlength: [20, 'Role must be at most 10 characters long'],
     },
     bank: [{
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'bank',
+        accNo: {
+            type: Number,
+            required: true
+        },
+        bankId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'bank',
+        }
+    }],
+    course: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'course',
     }],
 }, { timestamps: true });
 

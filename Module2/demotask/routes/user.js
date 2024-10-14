@@ -11,11 +11,13 @@ router.get('/', getuser)
 
 router.get('/:id', getuserbyid);
 
-router.delete('/:id', verifyToken1,deleteuser);
+router.delete('/:id',deleteuser);
 
 router.put('/:id', updatedUser);
 
 router.put('/addbank/:id',verifyToken,addbankuser);
+
+// router.put('/addcourse/:id',verifyToken,addcoursedata);
 
 export default router;
 
