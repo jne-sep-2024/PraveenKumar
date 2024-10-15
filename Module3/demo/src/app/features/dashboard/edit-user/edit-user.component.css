@@ -1,0 +1,69 @@
+.edit-user {
+    padding: 20px; /* Add some padding */
+}
+
+.back-btn {
+    background-color: #007bff; /* Blue color for back button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below back button */
+}
+
+.back-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+    /* Stack fields vertically */
+}
+
+.input-row {
+    display: flex; /* Use flexbox to align input groups side by side */
+    justify-content: space-between; /* Space between input groups */
+    margin-bottom: 15px; /* Space between rows */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    flex: 1; /* Allow equal space distribution */
+    margin-right: 10px; /* Space between input groups */
+}
+
+.input-group:last-child {
+    margin-right: 0; /* Remove margin for the last group */
+}
+
+label {
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    width: 80%; /* Full width of the input group */
+}
+
+.update-btn {
+    padding: 10px 15px;
+    background-color: #28a745; /* Green color for the update button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100px; /* Fixed width for the button */
+    align-self: flex-start; /* Align button to the start */
+}
+
+.update-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}

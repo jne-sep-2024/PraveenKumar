@@ -1,0 +1,19 @@
+/* Global layout */
+body {
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+}
+
+.main-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-area .main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
